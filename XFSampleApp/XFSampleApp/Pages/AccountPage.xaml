@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFSampleApp.Pages.AccountPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="登入頁面">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label HorizontalOptions="StartAndExpand" Text="Account:" />
+            <Entry x:Name="AccountEntry" Placeholder="請輸入帳號..." />
+            <Label HorizontalOptions="StartAndExpand" Text="Password:" />
+            <Entry
+                x:Name="PasswordEntry"
+                IsPassword="True"
+                Placeholder="請輸入密碼..." />
+            <StackLayout Orientation="Horizontal">
+                <Button
+                    Clicked="CancelButton_Clicked"
+                    Text="取消"
+                    VerticalOptions="CenterAndExpand" />
+                <Button
+                    Clicked="Button_Clicked"
+                    Text="登入"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

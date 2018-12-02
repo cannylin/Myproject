@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFSampleApp.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+ 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XFSampleApp"
+    Title="展示樣板">
+    <!-- xaml Ui 元件本身 一定會有 "繫結"會用就好   -->
+    <!--1:找到對的繫結屬性才能 塞給他-->
+    <!--SchoolListView.ItemsSource 的繫結屬性.ItemsSource Data 集合-->
+    
+    <StackLayout>
+
+        <ListView
+         x:Name="SchoolListView"
+            IsPullToRefreshEnabled="True"
+           BackgroundColor="BlueViolet"
+             Refreshing="ListView_Refreshing"
+            ItemTapped="SchoolListView_ItemTapped"
+                 VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate> 
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="AUTO"/>
+                            </Grid.ColumnDefinitions>
+                            <!--   <StackLayout Orientation="Horizontal"> -->
+                            <Image  Grid.RowSpan="1"
+                                    HeightRequest="60" 
+                                   WidthRequest="60"
+                                   Source="{Binding LOGO}" />
+                            <!--  <Image Source="auo" /> -->
+                            <!--<Image Source="{Binding ImageUrl}" />-->
+                            <!--  Label包覆>StackLayout -->
+                           <!--無特別指定 往下傳遞 層次疊代  繼承觀念-->
+                            <!-- 資料上無特別具體名稱 {Binding .} 以點.表示  -->
+
+                            <StackLayout Grid.Column="1">
+                            <Label  
+                                   Text="{Binding Name}"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center"/>
+
+
+
+                                <Label
+                                Grid.Row="1"
+                                Text="{Binding ADDRESS}"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center"
+                         
+                                />
+
+                                <Label
+                                   Grid.Row="2"
+                             
+                                Text="{Binding TEL}"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center"
+                         
+                                />
+
+                            </StackLayout>
+
+                            <Button Grid.Column="2"  Text="TEL" Clicked="CALL_BT_CLICK" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+         </ListView>
+
+            <!--  Place new controls here  -->
+        <ListView VerticalOptions="FillAndExpand" Refreshing="ListView_Refreshing" />
+
+        <!--Button Text="Go To DetailPage" Clicked="Button_Clicked" /-->
+    </StackLayout>
+</ContentPage>
