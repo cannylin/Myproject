@@ -7,7 +7,7 @@
     xmlns:local="clr-namespace:XFSampleApp"
     Title="展示樣板">
     <!-- xaml Ui 元件本身 一定會有 "繫結"會用就好   -->
-    <!--1:找到對的繫結屬性才能 塞給他-->
+    <!--1:找到對的繫結屬性才能 塞給他 test-->
     <!--SchoolListView.ItemsSource 的繫結屬性.ItemsSource Data 集合-->
     
     <StackLayout>
@@ -26,6 +26,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="60"/>
                                 <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="AUTO"/>
                                 <ColumnDefinition Width="AUTO"/>
                             </Grid.ColumnDefinitions>
                             <!--   <StackLayout Orientation="Horizontal"> -->
@@ -67,6 +68,7 @@
                             </StackLayout>
 
                             <Button Grid.Column="2"  Text="TEL" Clicked="CALL_BT_CLICK" />
+                            <Button Grid.Column="3"  Text="Email" Clicked="Mail_BT_CLICK" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
