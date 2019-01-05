@@ -22,7 +22,22 @@
                     Clicked="Button_Clicked"
                     Text="登入"
                     VerticalOptions="CenterAndExpand" />
+
             </StackLayout>
+
+            <StackLayout Padding="10, 0">
+                <Label x:Name="label"
+               Text="TEXT"
+               FontSize="80"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+                <Slider x:Name="slider"
+                Maximum="360"
+                VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+
+
 
         </StackLayout>
     </ContentPage.Content>

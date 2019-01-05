@@ -4,9 +4,10 @@ using System.Text;
 
 namespace XFSampleApp.Models
 {
-    public class PLC_Command
+
+    public class PLC_Display_class
     {
-        public string D0_D9 { get; set; }
+        public string PLC_Display { get; set; }
         public string D10_D19 { get; set; }
         public string D20_D29 { get; set; }
 
